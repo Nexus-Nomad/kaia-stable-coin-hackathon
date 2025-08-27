@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* K-Citizenship Pass Design System */
+@layer base {
+  :root {
+    /* Background colors */
+    --background: 210 60% 98%;
+    --foreground: 210 10% 15%;
+    --dark-section: 210 25% 8%;
+    --dark-section-foreground: 210 40% 98%;
+
+    /* Brand colors - Dark tones */
+    --primary: 210 80% 15%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 150 60% 20%;
+    --secondary-foreground: 150 40% 95%;
+
+    /* Accent colors - Bright tones */
+    --accent-lime: 85 80% 70%;
+    --accent-lime-foreground: 85 60% 15%;
+    --accent-sky: 200 85% 75%;
+    --accent-sky-foreground: 200 60% 15%;
+    --accent-emerald: 160 70% 65%;
+    --accent-emerald-foreground: 160 60% 15%;
+
+    /* Card colors */
+    --card: 210 100% 97%;
+    --card-foreground: 210 15% 20%;
+    --card-dark: 210 30% 12%;
+    --card-dark-foreground: 210 40% 95%;
+
+    /* Interactive elements */
+    --popover: 210 100% 98%;
+    --popover-foreground: 210 15% 20%;
+    --muted: 210 40% 90%;
+    --muted-foreground: 210 15% 45%;
+    --border: 210 40% 85%;
+    --input: 210 40% 90%;
+    --ring: 200 85% 75%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 150 70% 50%;
+    --success-foreground: 150 90% 95%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 210 25% 8%;
+    --foreground: 210 40% 95%;
+    --dark-section: 210 30% 5%;
+    --dark-section-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-noto;
+  }
+}
+
+@layer components {
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(210 80% 15%), hsl(150 60% 20%));
+  }
+  
+  .gradient-accent {
+    background: linear-gradient(90deg, hsl(85 80% 70%), hsl(200 85% 75%));
+  }
+  
+  .gradient-card {
+    background: linear-gradient(145deg, hsl(210 100% 97%), hsl(200 40% 95%));
+  }
+  
+  .gradient-dark {
+    background: linear-gradient(135deg, hsl(210 25% 8%), hsl(210 30% 12%));
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 4px 20px -2px hsl(210 40% 80% / 0.3);
+  }
+  
+  .shadow-medium {
+    box-shadow: 0 8px 30px -4px hsl(210 40% 70% / 0.4);
+  }
+  
+  .shadow-strong {
+    box-shadow: 0 12px 40px -8px hsl(210 40% 60% / 0.5);
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 30px hsl(200 85% 75% / 0.4);
+  }
+  
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-bounce {
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(200 85% 75% / 0.6);
+    transform: translateY(-2px);
+  }
+
+  .stats-card {
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+
+  .stats-card:hover {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.3s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+}
