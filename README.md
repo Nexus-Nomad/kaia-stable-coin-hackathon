@@ -1,0 +1,1 @@
+# kaia-stable-coin-hackathon
